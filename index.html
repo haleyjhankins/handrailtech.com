@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Handrail Tech Services — Helping Seniors Feel Confident Online</title>
   <link rel="stylesheet" href="./css/tailwind.css" />
+  <!-- Optimized font loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="favicon-v2.ico" type="image/x-icon">
 
 </head>
@@ -20,7 +21,7 @@
     <div class="max-w-6xl mx-auto px-6 flex items-center justify-between py-4 md:py-5">
       <!-- Brand -->
       <a href="index.html" class="flex items-center gap-3">
-        <img class="w-[60px]" src="src/images/logo_transparent.png" alt="Handrail Tech services">
+        <img class="w-[60px]" src="src/images/logo_transparent.png" alt="Handrail Tech services" width="60" height="60" fetchpriority="high">
       </a>
 
       <!-- Desktop Links -->
@@ -72,9 +73,12 @@
       <!-- Left: Image -->
       <div class="flex justify-center md:justify-end relative" style="z-index:1;">
         <div class="absolute hidden md:block" aria-hidden="true" style="z-index:0; pointer-events:none; top:-60px; left:-70px; width:calc(100% + 40px); height:calc(100% + 40px); overflow:hidden;">
-          <img src="src/images/circuit-board.svg" alt="Decorative circuit board pattern" style="width:100%; height:100%; object-fit:cover; opacity:0.4;" />
+          <img src="src/images/circuit-board.svg" alt="Decorative circuit board pattern" width="600" height="600" loading="lazy" style="width:100%; height:100%; object-fit:cover; opacity:0.4;" />
         </div>
-        <img src="src/images/older-couple.jpg" alt="Photo of a couple smiling and using a smartphone" class="relative rounded-2xl shadow-lg border border-dust-grey/40 object-cover w-full transition-transform duration-700 hover:scale-[1.02]" style="z-index:1;" />
+        <picture>
+          <source srcset="src/images/older-couple.webp" type="image/webp">
+          <img src="src/images/older-couple.jpg" alt="Photo of a couple smiling and using a smartphone" width="600" height="400" fetchpriority="high" class="relative rounded-2xl shadow-lg border border-dust-grey/40 object-cover w-full transition-transform duration-700 hover:scale-[1.02]" style="z-index:1;" />
+        </picture>
       </div>
 
       <!-- Right: Text -->
@@ -141,7 +145,10 @@
           </p>
 
           <div class="img-box">
-            <img src="src/images/haley-handrail.jpg" alt="Haley Hankins, founder of Handrail" class="rounded-2xl shadow-lg border border-dust-grey object-cover w-full mt-4">
+            <picture>
+              <source srcset="src/images/haley-handrail.webp" type="image/webp">
+              <img src="src/images/haley-handrail.jpg" alt="Haley Hankins, founder of Handrail" width="600" height="400" loading="lazy" class="rounded-2xl shadow-lg border border-dust-grey object-cover w-full mt-4">
+            </picture>
           </div>
         </div>
       </div>
@@ -319,7 +326,7 @@
           <br>
           📞 <a class="text-graphite font-semibold hover:underline" href="tel:+16823510054">(682) 351-0054</a>
           <div class="map w-full h-96 sm:h-80 md:h-72 lg:h-64 xl:h-56 2xl:h-48 max-w-md mx-auto mt-6">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d855861.5767128052!2d-96.91217106875!3d33.07727825440176!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1767993484467!5m2!1sen!2sus" style="width: 100%; height: 300px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe role="contentinfo" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d855861.5767128052!2d-96.91217106875!3d33.07727825440176!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1767993484467!5m2!1sen!2sus" style="width: 100%; height: 300px; border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         <div class="bg-parchment rounded-2xl p-6 border border-dust-grey shadow-sm text-center">
@@ -410,7 +417,7 @@
   </footer>
 
   <!-- Navbar toggle script -->
-  <script>
+  <script defer>
     document.addEventListener('DOMContentLoaded', function() {
       const btn = document.getElementById('nav-toggle');
       const menu = document.getElementById('mobile-menu');
